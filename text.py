@@ -16,7 +16,7 @@ class WikipediaArticleSummaryApp:
     def __init__(self, root):
         self.root = root
        
-        self.root.title("Text Sumaraizer")
+        self.root.title("Text Summarizer")
 
         self.root.configure(bg='#CBE1EF')  # Background color
         title_font = ("Helvetica", 18, "bold")
@@ -24,7 +24,7 @@ class WikipediaArticleSummaryApp:
         label_font1 = ("Helvetica", 12, "bold")
         button_font = ("Helvetica", 12, "bold")
 
-        self.title_label = tk.Label(root, text="Text Summuraizer", font=title_font, bg='#9ACDE0', fg='#0A568A', padx=10, pady=10)  # Background and foreground color, padding
+        self.title_label = tk.Label(root, text="Text Summarizer", font=title_font, bg='#9ACDE0', fg='#0A568A', padx=10, pady=10)  # Background and foreground color, padding
         self.title_label.pack(fill=tk.X)
 
         self.url_label = tk.Label(root, text="Paste the URL link below 👇🏻:",font=label_font1, bg='#CBE1EF')
