@@ -3,6 +3,7 @@ from tkinter import scrolledtext
 import bs4 as bs
 import urllib.request as url
 import re
+
 import nltk 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -11,32 +12,32 @@ from nltk.probability import FreqDist
 import heapq
 from string import punctuation
 
-class WikipediaArticleSummaryApp:
+class TextSummary:
     def __init__(self, root):
         self.root = root
        
         self.root.title("Text Summarizer")
 
-        self.root.configure(bg='#CBE1EF')  # Background color
+        self.root.configure(bg='#332626')  # Background color
         title_font = ("Helvetica", 18, "bold")
         label_font = ("Helvetica", 12)
         label_font1 = ("Helvetica", 12, "bold")
         button_font = ("Helvetica", 12, "bold")
 
-        self.title_label = tk.Label(root, text="Text Summarizer", font=title_font, bg='#9ACDE0', fg='#0A568A', padx=10, pady=10)  # Background and foreground color, padding
+        self.title_label = tk.Label(root, text="Webpage Summarizer", font=title_font, bg='#444444', fg='#f23d5d', padx=10, pady=10)  # Background and foreground color, padding
         self.title_label.pack(fill=tk.X)
 
-        self.url_label = tk.Label(root, text="Paste the URL link below 👇🏻:",font=label_font1, bg='#CBE1EF')
+        self.url_label = tk.Label(root, text="Paste the URL link below 👇🏻:",font=label_font1, bg='#332626',fg='#f4e0d0')
         self.url_label.pack(pady=(10,0))
 
         self.url_entry = tk.Entry(root, width=50, font=label_font)
         self.url_entry.insert(0, "https://www.geeksforgeeks.org/natural-language-processing-overview/")
         self.url_entry.pack(padx=5,pady=5)
 
-        self.fetch_button = tk.Button(root, text="Fetch Article", command=self.fetch_article, font=button_font, bg='#5EA9BE', fg='white', pady=5)
+        self.fetch_button = tk.Button(root, text="Fetch Article", command=self.fetch_article, font=button_font, bg='#f23d5d', fg='white', pady=5)
         self.fetch_button.pack(pady=(10,0))
 
-        self.summary_text = scrolledtext.ScrolledText(root, width=80,font=label_font, height=20,bg='#E6E6E6', fg='black', padx=10,pady=10)
+        self.summary_text = scrolledtext.ScrolledText(root, width=80,font=label_font, height=20,bg='#000000', fg='white', padx=10,pady=10)
         self.summary_text.pack(expand=True, fill=tk.BOTH, padx=10,pady=5)
 
     def fetch_article(self):
@@ -92,5 +93,5 @@ class WikipediaArticleSummaryApp:
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry("800x600")
-    app = WikipediaArticleSummaryApp(root)
+    app = TextSummary(root)
     root.mainloop()
